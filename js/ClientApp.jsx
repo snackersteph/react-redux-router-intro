@@ -7,7 +7,6 @@ import App from './App';
 const renderApp = () => {
   render(<App />, document.getElementById('app'));
 };
-
 renderApp();
 
 // the module variable is coming from webpack
