@@ -4,7 +4,6 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-// this is called type casting-because it's not recognized as a React Component
 const Wrapper = styled((Link: any))`
   width: 32%;
   border: 2px solid #333;
@@ -29,7 +28,7 @@ class ShowCard extends Component {
   props: Show;
   render() {
     return (
-      <Wrapper to={`/details/${this.props.imdbID}`} >
+      <Wrapper className="show-card" to={`/details/${this.props.imdbID}`}>
         <Image alt={`${this.props.title} Show Poster`} src={`/public/img/posters/${this.props.poster}`} />
         <div>
           <h3>{this.props.title}</h3>
@@ -37,7 +36,7 @@ class ShowCard extends Component {
           <p>{this.props.description}</p>
         </div>
       </Wrapper>
-    )
+    );
   }
 }
 
