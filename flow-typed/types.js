@@ -7,10 +7,20 @@ export type Show = {
   imdbID: string, 
   trailer: string, 
   poster: string 
-}
+};
 
 declare var module: {
   hot: {
     accept(path: string, callback: () => void): void
   }
-}
+};
+
+declare type ActionType = 'SET_SEARCH_TERM';
+
+// this is flow syntax to set parameters
+declare type ActionT<A: ActionType, P> = {|
+  type: A,
+  payload: P
+|}
+
+export type Action = ActionT<'SET_SEARCH_TERM', string>;
